@@ -1,0 +1,62 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+$primary: #6610f2;
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// push content so footer is at the bottom
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of viewport */
+}
+main {
+    flex: 1; /* Pushes footer down */
+}
+
+.card-hover, .card-hover-red {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-hover:hover {
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+}
+
+.card-hover-red:hover {
+    background-color: var(--bs-danger) !important;
+    color: white !important;
+}
+
+.card-hover-red-outline:hover {
+    border-color: var(--bs-danger) !important;
+}
+
+.card-hover:hover .card-title,
+.card-hover:hover .card-text {
+    color: white !important;
+}
+
+// this is for selector checkbox
+label {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.card-checkbox:checked+.card {
+    background-color: $danger !important;
+    color: white !important;
+    /* border-color: #0d6efd; */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-checkbox:not(:checked)+.card {
+    transition: background-color 0.3s, color 0.3s;
+}
